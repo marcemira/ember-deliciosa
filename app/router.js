@@ -6,9 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('dishes');
-  this.route('ingredients');
-  this.route('dishTypes');
+  this.route('dish', function() {
+    this.route('edit');
+    this.route('new');
+  });
 });
 
 export default Router;
