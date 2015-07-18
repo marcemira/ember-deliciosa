@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <legend>Añadir Ingredientes</legend>
+    <button type="button" class="btn btn-primary" {{action 'add'}}> Añadir Ingredientes</button>
 
     {{#each dish.ingredients as ingredient}}
 
@@ -31,8 +31,6 @@
       </div>
 
     {{/each}}
-
-    <button type="button" class="btn btn-primary" {{action 'add'}}> Añadir </button>
 
     <hr>
 
