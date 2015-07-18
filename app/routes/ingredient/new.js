@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.find('dish-type');
+    return this.store.createRecord('ingredient');
   },
-
   setupController: function(controller, model) {
-    controller.set('dishTypes', model);
+    controller.set('ingredient', model);
+    this._super(controller, model);
   }
 });

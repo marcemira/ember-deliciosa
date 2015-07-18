@@ -10,6 +10,14 @@ Router.map(function() {
     this.route('edit');
     this.route('new');
   });
+  this.route('ingredient', function() {
+    this.route('new');
+    this.route('edit');
+  });
+  this.route('dish-type', function() {
+    this.route('new');
+    this.route('edit');
+  });
 });
 
 export default Router;
