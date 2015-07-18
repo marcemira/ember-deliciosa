@@ -1,25 +1,21 @@
-{{del-toolbar}}
+<h2>Nuestro Menú</h2>
 
-<md-content>
+<ul class="list-unstyled">
 
-    {{#md-list}}
+{{#each model as |dish index|}}
 
-        {{#each model as |dish index|}}
+  <li class="dish">
 
-            {{#md-list-item class="md-3-line"}}
+    <img src="img/dish.jpg" alt="{{dish.name}}" class="pull-left">
+    <div class="pull-right"><strong>$ {{dish.price}}</strong></div>
+    <div class="pull-left">
+      <div class="name">{{dish.name}}</div>
+      <div class="desc">{{dish.description}}</div>
+      <div class="ingr">{{dish.ingredientList}}</div>
+    </div>
 
-                <img class="md-avatar" src="img/dish.jpg" alt="{{dish.name}}">
-                <div class="md-list-item-text">
-                    <div style="float: right"><strong>$ {{dish.price}}</strong></div>
-                    <h3>{{dish.name}}</h3>
-                    <h4>{{dish.description}}</h4>
-                    <p>{{dish.ingredientList}}</p>
-                </div>
+  </li>
 
-            {{/md-list-item}}
+{{/each}}
 
-        {{/each}}
-
-    {{/md-list}}
-
-</md-content>
+</ul>
