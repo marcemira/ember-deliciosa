@@ -5,18 +5,38 @@
     <legend>Nuevo Plato</legend>
 
     <div class="form-group">
-      <label class="col-md-2 control-label" for="textinput">Nombre</label><br>
+      <label class="col-md-1 control-label" for="textinput">Nombre</label><br>
       <div class="col-md-6">
-        {{input id="textinput" value=model.name name="name" type="text" placeholder="Nombre del Plato" class="form-control input-md"}}
+        {{input id="textinput" value=dish.name name="name" type="text" placeholder="Nombre del Plato" class="form-control input-md"}}
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-2 control-label" for="textinput">Descripción</label><br>
+      <label class="col-md-1 control-label" for="textinput">Descripción</label><br>
       <div class="col-md-6">
-        {{input id="textinput" value=model.description name="name" type="text" placeholder="Describe..." class="form-control input-md"}}
+        {{input id="textinput" value=dish.description name="name" type="text" placeholder="Describe..." class="form-control input-md"}}
       </div>
     </div>
+
+    <legend>Añadir Ingredientes</legend>
+
+    {{#each dish.ingredients as ingredient}}
+
+      <div class="form-group">
+        <label class="col-md-1 control-label" for="textinput">Nombre</label><br>
+        <div class="col-md-6">
+          {{input id="textinput" value=ingredient.name name="name" type="text" placeholder="Nombre del ingrediente" class="form-control input-md"}}
+        </div>
+        <button type="button" class="btn btn-warning btn-sm" {{action 'remove' ingredient}}>Quitar</button>
+      </div>
+
+    {{/each}}
+
+    <button type="button" class="btn btn-primary" {{action 'add'}}> Añadir </button>
+
+    <hr>
+
+    <button type="button" class="btn btn-success" {{action 'save'}}> Guardar </button>
 
   </fieldset>
 
