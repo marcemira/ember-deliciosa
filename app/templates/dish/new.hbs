@@ -1,7 +1,23 @@
-<h2>Nuevo Plato</h2>
+<form class="form-horizontal">
 
-<legend>Nombre</legend>
-{{input type="text" value=model.name}}
-<br><br>
-<legend>Descripcion</legend>
-{{input type="text" value=model.description}}
+  <fieldset>
+
+    <legend>Nuevo Plato</legend>
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">Nombre</label><br>
+      <div class="col-md-6">
+        {{input id="textinput" value=model.name name="name" type="text" placeholder="Nombre del Plato" class="form-control input-md"}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="textinput">Descripción</label><br>
+      <div class="col-md-6">
+        {{input id="textinput" value=model.description name="name" type="text" placeholder="Describe..." class="form-control input-md"}}
+      </div>
+    </div>
+
+  </fieldset>
+
+</form>

@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('dish', function() {
+  this.resource('dish', function() {
     this.route('edit');
     this.route('new');
   });
